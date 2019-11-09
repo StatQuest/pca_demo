@@ -61,7 +61,6 @@ pca$rotation[top_10_genes,1] ## show the scores (and +/- sign)
 ## results using "svd()" (Singular Value Decomposition) or using "eigen()"
 ## (Eigen Decomposition).
 ##
-##
 #######
  
 ############################################
@@ -79,6 +78,7 @@ pca$rotation[top_10_genes,1] ## show the scores (and +/- sign)
 ##     scaled by sample size in an unbiased way (ie. 1/(n-1)).
 ##     For prcomp(), sdev = sqrt(var) = sqrt(ss(fit)/(n-1))
 ##     For svd(), d = sqrt(ss(fit))
+##
 ############################################
  
 svd.stuff <- svd(scale(t(data.matrix), center=TRUE))
@@ -113,6 +113,7 @@ ggplot(data=svd.data, aes(x=X, y=Y, label=Sample)) +
 ## vectors = eigen vectors (vectors of loading scores)
 ##           NOTE: pcs = sum(loading scores * values for sample)
 ## values = eigen values
+##
 ############################################
 cov.mat <- cov(scale(t(data.matrix), center=TRUE))
 dim(cov.mat)
